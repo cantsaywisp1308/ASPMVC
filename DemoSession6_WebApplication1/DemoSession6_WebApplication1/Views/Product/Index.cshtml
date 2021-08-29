@@ -1,0 +1,33 @@
+﻿<h2>Product List</h2>
+<br />
+<form method="get" asp-controller="product" asp-action="searchByKeyword">
+    Keyword: <input type="text" name="keyword" value="@ViewBag.key"/>
+    <input type="submit" value="Search"/>
+</form>
+
+<form method="get" asp-controller="product" asp-action="serachByPrice">
+    Min <input type="text" name="min" value="@ViewBag.min"/> &nbsp; Max <input type="text" name="max" value="@ViewBag.max"/> <br />
+    <input type="submit" value="Search"/>
+</form>
+
+
+<br />
+<table style="border:1px solid black">
+    <tr style="border:1px solid black">
+        <th style="border:1px solid black">ID</th>
+        <th style="border:1px solid black">Name</th>
+        <th style="border:1px solid black">Photo</th>
+        <th style="border:1px solid black">Price</th>
+        <th style="border:1px solid black">Created</th>
+    </tr>
+    @foreach(var product in ViewBag.products) 
+    {
+        <tr style="border:1px solid black">
+            <td style="border:1px solid black">@product.Id</td>
+            <td style="border:1px solid black">@product.Name</td>
+            <td style="border:1px solid black"><img src="~/images/@product.Photo" style="border:5px solid red;width: 200px; height: 150px"/></td>
+            <td style="border:1px solid black">@product.Price</td>
+            <td style="border:1px solid black">@product.Created.ToString("dd/MM/yyyy")</td>
+        </tr>
+    }
+</table>

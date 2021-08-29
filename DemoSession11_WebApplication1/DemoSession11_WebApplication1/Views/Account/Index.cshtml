@@ -1,0 +1,25 @@
+﻿<h3>Accounts List</h3>
+<a asp-controller="account" asp-action="add">Add Account</a>
+
+<table style="border: 1px solid black">
+    <tr>
+        <th style="border: 1px solid black">ID</th>
+        <th style="border: 1px solid black">Username</th>
+        <th style="border: 1px solid black">Fullname</th>
+        <th style="border: 1px solid black">Status</th>
+        <th style="border: 1px solid black">Action</th>
+    </tr>
+    @foreach (var account in ViewBag.accounts)
+    {
+        <tr style="border: 1px solid black">
+            <td style="border: 1px solid black">@account.Id</td>
+            <td style="border: 1px solid black">@account.Username</td>
+            <td style="border: 1px solid black">@account.Fullname</td>
+            <td style="border: 1px solid black">@account.Status</td>
+            <td>
+                <a asp-controller="account" asp-action="delete" asp-route-id="@account.Id" onclick="return confirm(' Are you sure ?')">Delete</a>
+                <a asp-controller="account" asp-action="edit" asp-route-id="@account.Id">Edit</a>
+            </td>
+        </tr>
+    }
+</table>

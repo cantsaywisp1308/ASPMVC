@@ -1,0 +1,39 @@
+﻿<h3>Product List</h3>
+
+
+<form method="post" action="@ViewBag.PostUrl">
+    
+    <input type="hidden" name="return" value="@ViewBag.ReturnUrl" />
+    <input type="hidden" name="business" value="@ViewBag.Business" />
+    <input type="hidden" name="cmd" value="_cart" />
+    <input type="hidden" name="upload" value="1" />
+
+    <table border="1">
+        <tr>
+            <td>ID</td>
+            <td>Name</td>
+            <td>Photo</td>
+            <td>Price</td>
+            <td>Quantity</td>
+        </tr>
+        @{ var index = 1;}
+        @foreach (var product in ViewBag.products)
+        {
+            <tr>
+                <td>@product.Id</td>
+                <td>@product.Name</td>
+                <td><img src="~/images/@product.Photo" style="width:150px;height:100px" /></td>
+                <td>@product.Price</td>
+                <td>
+                    @product.Quantity
+                    <input type="hidden" name="item_number_@index" value="@product.Id" />
+                    <input type="hidden" name="item_name_@index" value="@product.Name" />
+                    <input type="hidden" name="amount_@index" value="@product.Price" />
+                    <input type="hidden" name="quantity_@index" value="@product.Quantity" />
+                </td>
+            </tr>
+            index++;
+        }
+    </table>
+    <input type="submit" value="Checkout" />
+</form>

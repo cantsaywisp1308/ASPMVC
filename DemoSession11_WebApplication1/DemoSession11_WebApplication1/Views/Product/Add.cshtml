@@ -1,0 +1,35 @@
+﻿@model DemoSession11_WebApplication1.Models.Product
+
+<h3>Add a Product</h3>
+
+<form method="post" enctype="multipart/form-data" asp-controller="product" asp-action="add">
+    <table>
+        <tr>
+            <td>Name</td>
+            <td><input type="text" asp-for="Name"/></td>
+        </tr>
+        <tr>
+            <td>Price</td>
+            <td><input type="text" asp-for="Price"/></td>
+        </tr>
+        <tr>
+            <td>Quantity</td>
+            <td><input type="number" min="1" asp-for="Quantity"/></td>
+        </tr>
+        <tr>
+            <td>Description</td>
+            <td><textarea cols="20" rows="5" asp-for="Description"></textarea></td>
+        </tr>
+        <tr>
+            <td>Photo</td>
+            <td><input type="file" name="file" asp-for="Photo" /></td>
+        </tr>
+        <tr>
+            <td>Status</td>
+            <td><input type="checkbox" asp-for="Status"/></td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="Save"/></td>
+        </tr>
+    </table>
+</form>

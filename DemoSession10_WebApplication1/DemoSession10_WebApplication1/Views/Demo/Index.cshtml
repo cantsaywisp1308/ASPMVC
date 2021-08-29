@@ -1,0 +1,154 @@
+﻿<script src="~/js/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#buttonDemo1').click(function () {
+            $.ajax({
+                type: 'GET',
+                url: '/ajax/demo1',
+                success: function (data) {
+                    $('#result1').html(data);
+                }
+            });
+        });
+
+        $('#buttonDemo2').click(function () {
+            $.ajax({
+                type: 'POST',
+                url: '/ajax/demo2',
+                success: function (data) {
+                    $('#result2').html(data);
+                }
+            });
+        });
+
+        $('#buttonDemo3').click(function () {
+            var fullName = $('#textboxFullname').val();
+            $.ajax({
+                type: 'GET',
+                data: {
+                    name: fullName
+                },
+                url: '/ajax/demo3',
+                success: function (data) {
+                    $('#result3').html(data);
+                }
+            });
+        });
+
+        $('#buttonDemo4').click(function () {
+            var fullName = $('#textboxFullname2').val();
+            $.ajax({
+                type: 'POST',
+                data: {
+                    name1: fullName
+                },
+                url: '/ajax/demo4',
+                success: function (data) {
+                    $('#result4').html(data);
+                }
+            });
+        });
+
+        $('#buttonLogin').click(function () {
+            var Username = $('#textboxUsername').val();
+            var Password = $('#textboxPassword').val();
+            $.ajax({
+                type: 'POST',
+                data: {
+                    username: Username,
+                    password: Password
+                },
+                url: '/ajax/login',
+                success: function (data) {
+                    $('#loginResult').html(data);
+                }
+            });
+        });
+
+        $('#buttonDemo6').click(function () {
+            $.ajax({
+                type: 'GET',
+                url: '/ajax/demo6',
+                success: function (product) {
+                    var result = 'id: ' + product.id;
+                    result += '<br>name: ' + product.name;
+                    result += '<br>price: ' + product.price;
+                    $('#result6').html(result);
+                }
+            });
+        });
+
+        $('#buttonDemo7').click(function () {
+            $.ajax({
+                type: 'GET',
+                url: '/ajax/demo7',
+                success: function (products) {
+                    var result = "";
+                    for (var i = 0; i < products.length; i++) {
+                        result += 'id: ' + products[i].id;
+                        result += '<br>name: ' + products[i].name;
+                        result += '<br>price: ' + products[i].price;
+                        result += '<br>-------------------------<br>';
+                        $('#result7').html(result);
+                    }
+                   
+                }
+            });
+        });
+
+    });
+</script>
+
+<h3>Demo Session</h3>
+
+<input type="button" value="Demo 1" id="buttonDemo1" />
+<br />
+<span id="result1"></span>
+
+<h3>Demo Session 2</h3>
+
+<input type="button" value="Demo 2" id="buttonDemo2" />
+<br />
+<span id="result2"></span>
+
+<h3>Demo Session 3</h3>
+
+Full Name
+<input type="text" id="textboxFullname" />
+<br />
+<input type="button" value="Demo3" id="buttonDemo3" />
+<br />
+<span id="result3"></span>
+
+<h3>Demo Session 4</h3>
+
+Full Name 2
+<input type="text" id="textboxFullname2" />
+<br />
+<input type="button" value="Demo3" id="buttonDemo4" />
+<br />
+<span id="result4"></span>
+
+<h3>Login</h3>
+
+Username
+<input type="text" id="textboxUsername" />
+<br />
+Password
+<input type="password" id="textboxPassword" />
+<br />
+<input type="button" value="Login" id="buttonLogin" />
+<br />
+<span id="loginResult"></span>
+
+<h3>Demo Session 6</h3>
+
+<input type="button" value="Demo 6" id="buttonDemo6" />
+<br />
+<span id="result6"></span>
+
+<h3>Demo Session 7</h3>
+
+<input type="button" value="Demo 7" id="buttonDemo7" />
+<br />
+<span id="result7"></span>  

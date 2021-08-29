@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "qu1kSI03CDvv3xLjkqC+XvYXTYEK1Itpk61RUs1LGsBfoWPZTMme+EwNkxRw95XC1XGw9jzaV0cs5X6gduvPWQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\DELL\\source\\repos\\ASP .Net Core\\DemoSession6_WebApplication1\\DemoSession6_WebApplication1\\DemoSession6_WebApplication1.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\DELL\\.nuget\\packages\\bcrypt.net-core\\1.6.0\\bcrypt.net-core.1.6.0.nupkg.sha512"
+  ],
+  "logs": []
+}

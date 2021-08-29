@@ -1,0 +1,23 @@
+﻿<h3>Product List</h3>
+
+<table style="border: 1px solid black">
+    <tr style="border: 1px solid black">
+        <th style="border: 1px solid black">ID</th>
+        <th style="border: 1px solid black">Name</th>
+        <th style="border: 1px solid black">Price</th>
+        <th style="border: 1px solid black">Photo</th>
+        <th style="border: 1px solid black">Action</th>
+    </tr>
+    @foreach(var product in ViewBag.products) { 
+<tr>
+    <td style="border: 1px solid black">@product.Id</td>
+    <td style="border: 1px solid black">@product.Name</td>
+    <td style="border: 1px solid black">@product.Price</td>
+    <td style="border: 1px solid black"><img src="~/images/@product.Photo" style="width: 120px; height: 150px" /></td>
+    <td style="border: 1px solid black">
+        <a asp-controller="cart" asp-action="buy" asp-route-id="@product.Id">Buy Now</a>
+    </td>
+</tr>
+     }
+</table>
+

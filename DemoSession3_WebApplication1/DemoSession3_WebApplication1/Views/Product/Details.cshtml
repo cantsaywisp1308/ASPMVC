@@ -1,0 +1,21 @@
+﻿<h1>Product Details</h1>
+
+<table style="border:1px solid black">
+    <tr>
+        <td style="border:1px solid black">ID</td>
+        <td style="border:1px solid black">@ViewBag.product.Id</td>
+    </tr>
+    <tr>
+        <td style="border:1px solid black">Name</td>
+        <td style="border:1px solid black">@ViewBag.product.Name</td>
+    </tr>
+    <tr>
+        <td style="border:1px solid black">Photo</td>
+        <td style="border:1px solid black"><img src="~/images/@ViewBag.product.Photo" width="200" height="150" /></td>
+    </tr>
+    <tr>
+        <td style="border:1px solid black">Price</td>
+        <td style="border:1px solid black">@ViewBag.product.Price</td>
+    </tr>
+</table>
+<a asp-controller="product" asp-action="index">Go Back</a>

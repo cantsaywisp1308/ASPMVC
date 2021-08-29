@@ -1,0 +1,28 @@
+﻿<h3>Product Details</h3>
+
+<table style="border: 1px solid black">
+    <tr style="border: 1px solid black">
+        <th style="border: 1px solid black">ID</th>
+        <td style="border: 1px solid black">@ViewBag.product.Id</td>
+    </tr>
+    <tr style="border: 1px solid black">
+        <th style="border: 1px solid black">Name</th>
+        <td style="border: 1px solid black">@ViewBag.product.Name</td>
+    </tr>
+    <tr style="border: 1px solid black">
+        <th style="border: 1px solid black">Photo</th>
+        <td style="border: 1px solid black"><img src="~/images/@ViewBag.product.Photo" width="150" height="100" /></td>
+    </tr>
+    <tr style="border: 1px solid black">
+        <th style="border: 1px solid black">Price</thstyle="border:>
+        <td style="border: 1px solid black">@ViewBag.product.Price</td>
+    </tr>
+    <tr style="border: 1px solid black">
+        <th style="border: 1px solid black">Quantity</th>
+        <td style="border: 1px solid black">@ViewBag.product.Quantity</td>
+    </tr>
+    <tr style="border: 1px solid black">
+        <th style="border: 1px solid black">Total</th>
+        <td style="border: 1px solid black">@(ViewBag.product.Price *ViewBag.product.Quantity)</td>
+    </tr>
+</table>

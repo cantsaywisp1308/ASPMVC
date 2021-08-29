@@ -1,0 +1,31 @@
+﻿<h3>Demo Index 2 - Send Email</h3>
+
+@ViewBag.msg
+
+<form method="post" asp-controller="demo" asp-action="index2" enctype="multipart/form-data">
+    <table>
+        <tr>
+            <td>To</td>
+            <td><input type="text" name="to" /></td>
+        </tr>
+        <tr>
+            <td>Subject</td>
+            <td><input type="text" name="subject" /></td>
+        </tr>
+        <tr>
+            <td>Content</td>
+            <td><textarea cols="20" rows="5" name="content"></textarea></td>
+        </tr>
+        <tr>
+            <td>Attach Files</td>
+            <td><input type="file" value="file" /></td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td><input type="submit" value="Send" /></td>
+        </tr>
+
+
+    </table>
+    
+</form>

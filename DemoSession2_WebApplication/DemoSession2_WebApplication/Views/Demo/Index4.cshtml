@@ -1,0 +1,78 @@
+﻿<h3>Customer List</h3>
+
+<link href="~/css/style.css" rel="stylesheet" />
+<br />
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Adress</th>
+    </tr>
+    @foreach (var customer in ViewBag.customers)
+    {
+        <tr>
+            <td>@customer.Id</td>
+            <td>@customer.Name</td>
+            <td>@customer.Address</td>
+        </tr>
+    }
+</table>
+
+<br />
+<table>
+    <tr>
+        <th>Product ID</th>
+        <th>Product Name</th>
+        <th>Photo</th>
+        <th>Price</th>
+        <th>Quantity</th>
+    </tr>
+    @foreach(var product in ViewBag.products) 
+    { 
+        <tr>
+            <td>@product.Id</td>
+            <td>@product.Name</td>
+            <td><img src="~/images/@product.Photo" width="150" height="100"/></td>
+            <td>@product.Price</td>
+            <td>@product.Quantity</td>
+        </tr>
+    }
+</table>
+
+<br />
+<table>
+    <tr>
+        <th>Invoice ID</th>
+        <th>Invoice Name</th>
+        <th>Total</th>
+        <th>Payment</th>
+        <th>Created</th>
+        <th>Customer</th>
+        <th>Products</th>
+    </tr>
+    @foreach(var invoice in ViewBag.invoices) 
+    { 
+        <tr>
+            <td>@invoice.Id</td>
+            <td>@invoice.Name</td>
+            <td>@invoice.Total</td>
+            <td>@invoice.Payment</td>
+            <td>@invoice.Created</td>
+            <td>
+                <ul>
+                    <li>@invoice.Customer.Id</li>
+                    <li>@invoice.Customer.Name</li>
+                    <li>@invoice.Customer.Address</li>
+                </ul>
+            </td>
+            <td>
+                <ul>
+                    @foreach (var product in @invoice.products)
+                    {
+                        <li>@product.Name</li>
+                    }
+                </ul>
+            </td>
+        </tr>
+    }
+</table>

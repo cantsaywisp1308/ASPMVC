@@ -1,0 +1,76 @@
+﻿@model DemoSession6_WebApplication1.Models.Account;
+
+
+<h3>Register</h3>
+<form method="post" enctype="multipart/form-data" asp-controller="account" asp-action="save">
+    <table>
+        <tr>
+            <td>Username</td>
+            <td>
+                <input type="text" asp-for="Username" />
+            </td>
+        </tr>
+        <tr>
+            <td>Password</td>
+            <td>
+                <input type="password" asp-for="Password" />
+            </td>
+        </tr>
+        <tr>
+            <td>Description</td>
+            <td>
+                <textarea cols="20" rows="5" asp-for="Description"></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td>Status</td>
+            <td>
+                <input type="checkbox" asp-for="Status" />
+            </td>
+        </tr>
+        <tr>
+            <td>Gender</td>
+            <td>
+                <input type="radio" asp-for="Gender" value="m" />Male
+                <br />
+                <input type="radio" asp-for="Gender" value="f" />Female
+
+            </td>
+        </tr>
+        <tr>
+            <td>Role</td>
+            <td>
+                <select asp-for="Role">
+                    <option value="r1">Role 1</option>
+                    <option value="r2">Role 2</option>
+                    <option value="r3">Role 3</option>
+                    <option value="r4">Role 4</option>
+                    <option value="r5">Role 5</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Address</td>
+            <td>
+                Street <input type="text" asp-for="Address.Street" />
+                <br />
+                Ward <input type="text" asp-for="Address.Ward" />
+                <br />
+                District <input type="text" asp-for="Address.District" />
+            </td>
+        </tr>
+        <tr>
+            <td>File</td>
+            <td>
+                <input type="file" value="photo" asp-for="Photo"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" value="Create" />
+                <input type="hidden" asp-for="Id" />
+            </td>
+        </tr>
+
+    </table>
+</form>

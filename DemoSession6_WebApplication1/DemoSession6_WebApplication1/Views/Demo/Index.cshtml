@@ -1,0 +1,39 @@
+﻿<h1>Index Page</h1>
+<a asp-controller="demo" asp-action="signin">Sign In</a>
+<a asp-controller="product" asp-action="index">Product List</a>
+<a asp-controller="demo" asp-action="upload1">Upload</a>
+<a asp-controller="demo" asp-action="upload2">Upload 2</a>
+<a asp-controller="account" asp-action="index">Register</a>
+<a asp-controller="employee" asp-action="index">Validation</a>
+
+<form method="get" asp-controller="demo" asp-action="search1">
+    Keyword <input type="text" name="keyword" />
+    <br />
+    <input type="submit" value="Search" />
+</form>
+
+<h3>Demo 2</h3>
+<form method="get" asp-controller="demo" asp-action="search2">
+    Min <input type="text" name="min" />
+    Max <input type="text" name="max" />
+    <br />
+    <input type="submit" value="Search" />
+</form>
+
+<h3>Demo 3</h3>
+<form method="post" asp-controller="demo" asp-action="login">
+    Username <input type="text" name="username" />
+    Password <input type="password" name="password" />
+    <br />
+    <input type="submit" value="Login" />
+</form>
+
+<h3>Demo 4</h3>
+<form method="post" asp-controller="demo" asp-action="update">
+    Quantity 1 <input type="text" name="quantity" />
+    <br />
+    Quantity 2 <input type="text" name="quantity" />
+    <br />
+    Quantity 3 <input type="text" name="quantity" />
+    <input type="submit" value="Update" />
+</form>

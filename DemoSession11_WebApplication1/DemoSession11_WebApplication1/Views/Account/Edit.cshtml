@@ -1,0 +1,32 @@
+﻿@model DemoSession11_WebApplication1.Models.Account;
+
+
+<h3>Edit Account</h3>
+
+<form method="post" asp-controller="account" asp-action="edit">
+    <table>
+        <tr>
+            <td>Username</td>
+            <td><input type="text" asp-for="Username" /></td>
+        </tr>
+        <tr>
+            <td>Password</td>
+            <td><input type="password" asp-for="Password" /></td>
+        </tr>
+        <tr>
+            <td>Fullname</td>
+            <td><input type="text" asp-for="Fullname" /></td>
+        </tr>
+        <tr>
+            <td>Status</td>
+            <td><input type="checkbox" asp-for="Status" /></td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" value="Save"/>
+                <input type="hidden" asp-for="Id"/>
+            </td>
+            
+        </tr>
+    </table>
+</form>

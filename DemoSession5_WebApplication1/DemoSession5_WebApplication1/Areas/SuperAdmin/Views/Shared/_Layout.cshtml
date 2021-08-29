@@ -1,0 +1,17 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <a asp-area="superadmin" asp-controller="account" asp-action="index">Account</a> |
+    <a asp-area="superadmin" asp-controller="invoice" asp-action="index">Invoice</a> |
+    <a asp-area="superadmin" asp-controller="product" asp-action="index">Product</a> |
+    <br /><br />
+    @RenderBody()
+    <br /><br />
+    Copyright 2021
+</body>
+</html>

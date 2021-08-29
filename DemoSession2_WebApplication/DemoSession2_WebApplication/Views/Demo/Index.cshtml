@@ -1,0 +1,37 @@
+﻿<h3>Index Page</h3>
+
+<link href="~/css/style.css" rel="stylesheet"/>
+<script src="~/js/mylib.js"></script>
+
+id: @ViewBag.Id
+<br />
+Name: @ViewBag.Name
+<br />
+Price @ViewBag.Price
+<br />
+Quantity: @ViewBag.Quantity
+<br />
+Status: @ViewBag.Status
+<br />
+Total : @(ViewBag.Price * ViewBag.Quantity)
+<br />
+status: @(ViewBag.Status ? "Active" : "Inactive")
+
+<br />
+@if (ViewBag.Status)
+{
+    <span style="color:red">Active</span>
+}
+else
+{ 
+    <span style="color:green">Inactive</span>
+}
+<br />
+<ul>
+    @foreach(var name in ViewBag.names)
+    { 
+        <li>@name</li>
+    }
+</ul>
+<br />
+<img src="~/images/background.jpg" width="500" height="300" onclick="clickMe()"/>

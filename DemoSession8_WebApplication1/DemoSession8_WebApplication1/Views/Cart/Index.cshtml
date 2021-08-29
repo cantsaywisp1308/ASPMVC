@@ -1,0 +1,39 @@
+﻿<h3>Cart</h3>
+<form method="post" asp-controller="cart" asp-action="update">
+
+
+    <table style="border: 1px solid black">
+        <tr style="border: 1px solid black">
+            <th style="border: 1px solid black">Action</th>
+            <th style="border: 1px solid black">ID</th>
+            <th style="border: 1px solid black">Name</th>
+            <th style="border: 1px solid black">Photo</th>
+            <th style="border: 1px solid black">Price</th>
+            <th style="border: 1px solid black">Quantity <input type="submit" / value="Update"></th>
+            <th style="border: 1px solid black">Sub Total</th>
+        </tr>
+
+        @foreach (var item in ViewBag.cart)
+        {
+
+            <tr style="border: 1px solid black">
+                <td style="border: 1px solid black"><a asp-controller="cart" asp-action="remove" asp-route-id="@item.Product.Id">Remove</a></td>
+                <td style="border: 1px solid black">@item.Product.Id</td>
+                <td style="border: 1px solid black">@item.Product.Name</td>
+                <td style="border: 1px solid black"><img src="~/images/@item.Product.Photo" style="width: 120px; height: 150px" /></td>
+                <td style="border: 1px solid black">@item.Product.Price</td>
+                <td style="border: 1px solid black"><input type="number" value="@item.Quantity" name="quantity" /></td>
+                <td style="border: 1px solid black">
+                    @(item.Product.Price * item.Quantity)
+                </td>
+            </tr>
+
+        }
+        <tr>
+            <td colspan="6" style="border: 1px solid black">Total</td>
+            <td style="border: 1px solid black">@ViewBag.total</td>
+        </tr>
+    </table>
+    <input type="submit" value="Checkout" asp-controller="checkout" asp-action="index"/>
+</form>
+<a asp-controller="product" asp-action="index">Continue Shopping</a>
