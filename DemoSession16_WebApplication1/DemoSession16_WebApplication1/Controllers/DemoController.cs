@@ -65,7 +65,7 @@ namespace DemoSession16_WebApplication1.Controllers
             string path = null;
             if(file!=null && file.Length > 0)
             {
-                path = Path.Combine(webHostEnvironment.WebRootPath, "Uploads", file.FileName);
+                path = Path.Combine(webHostEnvironment.WebRootPath, "uploads", file.FileName);
                 using(var fileStream = new FileStream(path, FileMode.Create))
                 {
                     file.CopyTo(fileStream);

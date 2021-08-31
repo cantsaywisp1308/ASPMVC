@@ -2,7 +2,7 @@
 
 @ViewBag.msg
 
-<form method="post" asp-controller="demo" asp-action="index2" enctype="multipart/form-data">
+<form method="post" enctype="multipart/form-data" asp-controller="demo" asp-action="index2" >
     <table>
         <tr>
             <td>To</td>
@@ -17,8 +17,8 @@
             <td><textarea cols="20" rows="5" name="content"></textarea></td>
         </tr>
         <tr>
-            <td>Attach Files</td>
-            <td><input type="file" value="file" /></td>
+            <td>Attach File</td>
+            <td><input type="file" name="file" /></td>
         </tr>
         <tr>
             <td>&nbsp;</td>
