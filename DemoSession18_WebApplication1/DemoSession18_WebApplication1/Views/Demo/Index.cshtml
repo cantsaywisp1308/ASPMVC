@@ -1,0 +1,21 @@
+﻿<a asp-controller="language" asp-action="change" asp-route-culture="fr-FR"><img src="~/images/france.png" width="120px" height="70px" /></a>
+<a asp-controller="language" asp-action="change" asp-route-culture="ja-JP"><img src="~/images/japan.png" width="120px" height="70px" /></a>
+<a asp-controller="language" asp-action="change" asp-route-culture="en-US"><img src="~/images/usa.png" width="120px" height="70px" /></a>
+<a asp-controller="language" asp-action="change" asp-route-culture="vi-VN"><img src="~/images/vn.png" width="120px" height="70px" /></a>
+<a asp-controller="language" asp-action="change" asp-route-culture="de-DE"><img src="~/images/germany.png" width="120px" height="70px" /></a>
+<br />
+<br />
+<input type="button" value="@myMessage["Save"]"/>
+<br />
+@myMessage["Price"]: @ViewBag.price.ToString("c");
+<br />
+<br />
+Number: @ViewBag.number.ToString("n");
+<br />
+<br />
+Percent: @ViewBag.percent.ToString("p");
+<br />
+<br />
+Number: @ViewBag.today.ToString("F");
+<br /><br />
+@myMessage["Msg"]
