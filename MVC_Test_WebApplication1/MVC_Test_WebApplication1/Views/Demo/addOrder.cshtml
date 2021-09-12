@@ -1,0 +1,37 @@
+﻿@model MVC_Test_WebApplication1.Models.Order
+
+<h3>Add Order</h3>
+
+<form method="post" asp-controller="demo" asp-action="addOrder">
+    <table>
+        <tr>
+            <td>Order Name</td>
+            <td><input type="text" asp-for="Name"/></td>
+        </tr>
+        <tr>
+            <td>Status </td>
+            <td><input type="checkbox" asp-for="Status" /></td>
+        </tr>
+        <tr>
+            <td>Payment: </td>
+            <td>
+                <select asp-for="Payments">
+                    <option>Cash</option>
+                    <option>Master Card</option>
+                    <option>Visa Card</option>
+                    <option>PayPal</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Customer</td>
+            <td>
+                <input type="text" asp-for="CustomerId" value="@ViewBag.cusID" />
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" value="Add New Order" /></td>
+        </tr>
+    </table>
+</form>

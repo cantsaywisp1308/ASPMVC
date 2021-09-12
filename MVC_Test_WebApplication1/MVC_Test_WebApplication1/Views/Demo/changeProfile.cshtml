@@ -1,0 +1,27 @@
+﻿@model MVC_Test_WebApplication1.Models.Customer
+
+<h3>Change Profile</h3>
+
+<form method="post" asp-controller="demo" asp-action="changeProfile">
+    <table>
+        <tr>
+            <td>Name:</td>
+            <td><input type="text" asp-for="Name" /></td>
+        </tr>
+        <tr>
+            <td>Birthday:</td>
+            <td><input type="date" asp-for="Birthday" /></td>
+        </tr>
+        <tr>
+            <td>Phone</td>
+            <td><input type="text" asp-for="Phone" /></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <input type="submit" value="Save" />
+                <input type="hidden" asp-for="Id"/>
+            </td>
+        </tr>
+    </table>
+</form>

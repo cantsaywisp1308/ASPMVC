@@ -1,0 +1,30 @@
+﻿@model MVC_Test_WebApplication1.Models.Order
+
+
+<h3>View Orders</h3>
+
+    <table border="1">
+        <tr>
+            <td>Order ID</td>
+            <td>Name</td>
+            <td>Date of Creation</td>
+            <td>Status</td>
+            <td>Payments</td>
+            <td>Customer ID</td>
+            <td>Options</td>
+        </tr>
+        @foreach (var order in ViewBag.orders)
+        {
+            <tr>
+                <td>@order.Id</td>
+                <td>@order.Name</td>
+                <td>@order.DateCreation.ToString("dd/MM/yyyy")</td>
+                <td>@(order.Status ? "Paid" : "Unpaid")</td>
+                <td>@order.Payments</td>
+                <td>@order.CustomerId</td>
+                <td><a asp-controller="demo" asp-action="deleteOrder" asp-route-ordID="@order.Id" asp-route-cusID="@order.CustomerId" onclick="return confirm('Are you sure to delete this item?')">Delete</a></td>
+            </tr>
+        }
+    </table>
+
+<a  asp-controller="demo" asp-action="addOrder" asp-route-cusID="@ViewBag.cusID">Add New Order</a>

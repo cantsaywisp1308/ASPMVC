@@ -1,0 +1,25 @@
+﻿<h3>Customer List</h3>
+
+<table border="1">
+    <tr>
+        <th>Customer ID</th>
+        <th>Name</th>
+        <th>Birthday</th>
+        <th>Phone</th>
+        <th>Options</th>
+    </tr>
+    @foreach (var customer in ViewBag.customers)
+    {
+        <tr>
+            <td>@customer.Id</td>
+            <td>@customer.Name</td>
+            <td>@customer.Birthday.ToString("dd/MM/yyyy")</td>
+            <td>@customer.Phone</td>
+            <td>
+                <a asp-controller="demo" asp-action="addOrder" asp-route-cusID="@customer.Id">Add New Order</a> | 
+                <a asp-controller="demo" asp-action="viewOrders" asp-route-cusID="@customer.Id">View Orders</a> | 
+                <a asp-controller="demo" asp-action="changeProfile" asp-route-cusID="@customer.Id">Change Profile</a>
+            </td>
+        </tr>
+    }
+</table>
